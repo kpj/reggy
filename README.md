@@ -6,6 +6,7 @@
 Python package for regularized regressions.
 
 Supported regularization terms:
+* Ridge
 * LASSO
 * Network-fusion penalty (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6030897/)
 

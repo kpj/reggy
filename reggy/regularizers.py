@@ -1,6 +1,10 @@
 import tensorflow as tf
 
 
+def ridge(alpha, beta, family):
+    return tf.reduce_sum(tf.square(beta))
+
+
 def lasso(alpha, beta, family):
     return tf.reduce_sum(tf.abs(beta))
 
