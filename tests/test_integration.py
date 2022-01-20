@@ -1,6 +1,6 @@
 import numpy as np
 
-import pyreg
+import reggy
 
 
 def test_simple_case():
@@ -10,7 +10,7 @@ def test_simple_case():
     X = np.random.normal(size=(1000, 1))
     y = np.random.normal(X * beta + alpha, size=(1000, 1))
 
-    model = pyreg.RegReg(X, y)
+    model = reggy.RegReg(X, y)
     fit = model.fit()
 
     np.testing.assert_allclose(model.model.alpha, alpha, rtol=1e-1)
@@ -28,7 +28,7 @@ def test_gaussian_example():
     y = np.random.normal(mu_true, size=(N, 1))
 
     # fit model
-    model = pyreg.RegReg(x, y)
+    model = reggy.RegReg(x, y)
     fit = model.fit()
 
     # check results
@@ -43,5 +43,5 @@ def test_regularization():
     X = np.random.normal(size=(1000, 1))
     y = np.random.normal(X * beta + alpha, size=(1000, 1))
 
-    model = pyreg.RegReg(X, y, regularizers=[pyreg.lasso])
+    model = reggy.RegReg(X, y, regularizers=[reggy.lasso])
     fit = model.fit()

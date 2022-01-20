@@ -1,7 +1,7 @@
-# pyreg
+# reggy
 
-[![PyPI](https://img.shields.io/pypi/v/pyreg.svg?style=flat)](https://pypi.python.org/pypi/pyreg)
-[![Tests](https://github.com/kpj/pyreg/workflows/Tests/badge.svg)](https://github.com/kpj/pyreg/actions)
+[![PyPI](https://img.shields.io/pypi/v/reggy.svg?style=flat)](https://pypi.python.org/pypi/reggy)
+[![Tests](https://github.com/kpj/reggy/workflows/Tests/badge.svg)](https://github.com/kpj/reggy/actions)
 
 Regressions with arbitrarily complex regularization terms.
 
@@ -12,7 +12,7 @@ Currently supported regularization terms:
 ## Installation
 
 ```bash
-$ pip install pyreg
+$ pip install reggy
 ```
 
 
@@ -20,7 +20,7 @@ $ pip install pyreg
 
 A simple example with LASSO regularization:
 ```python
-import pyreg
+import reggy
 import numpy as np
 
 
@@ -30,7 +30,7 @@ beta = 1.7
 X = np.random.normal(size=(1000, 1))
 y = np.random.normal(X * beta + alpha, size=(1000, 1))
 
-model = pyreg.RegReg(X, y, regularizers=[pyreg.lasso])
+model = reggy.RegReg(X, y, regularizers=[reggy.lasso])
 model.fit()
 
 print(model.coef())

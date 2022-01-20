@@ -5,4 +5,4 @@ from .main import RegReg
 from .families import *
 from .regularizers import *
 
-__version__ = metadata.version("pyreg")
+__version__ = metadata.version("reggy")
