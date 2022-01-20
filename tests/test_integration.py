@@ -60,6 +60,9 @@ def test_regularization(seed_rng):
         X,
         y,
         family=reggy.gaussian_family,
-        regularizers=[reggy.lasso, reggy.network_fusion_x(similarity_graph)],
+        regularizers=[
+            (0.5, reggy.lasso),
+            (0.5, reggy.network_fusion_x(similarity_graph)),
+        ],
     )
     fit = model.fit()

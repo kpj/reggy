@@ -31,7 +31,7 @@ beta = 1.7
 X = np.random.normal(size=(100, 1))
 y = np.random.normal(X * beta + alpha, size=(100, 1))
 
-model = reggy.RegReg(X, y, family=reggy.gaussian_family, regularizers=[reggy.lasso])
+model = reggy.RegReg(X, y, family=reggy.gaussian_family, regularizers=[(0.5, reggy.lasso)])
 model.fit()
 
 print(model.intercept_, model.coef_)

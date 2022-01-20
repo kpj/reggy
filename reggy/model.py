@@ -18,9 +18,8 @@ class Model(tf.keras.Model):
         eta = self._linear_predictor(self.alpha, self.beta, x)
 
         # apply regularization terms
-        for reg in self.regularizers:
-            # TODO: add regularization parameters
-            self.add_loss(reg(self.alpha, self.beta, self.family))
+        for param, reg in self.regularizers:
+            self.add_loss(param * reg(self.alpha, self.beta, self.family))
 
         return self.family["linkinv"](eta)
 
