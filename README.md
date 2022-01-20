@@ -3,10 +3,11 @@
 [![PyPI](https://img.shields.io/pypi/v/reggy.svg?style=flat)](https://pypi.python.org/pypi/reggy)
 [![Tests](https://github.com/kpj/reggy/workflows/Tests/badge.svg)](https://github.com/kpj/reggy/actions)
 
-Regressions with arbitrarily complex regularization terms.
+Python package for regularized regressions.
 
-Currently supported regularization terms:
+Supported regularization terms:
 * LASSO
+* Network-fusion penalty (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6030897/)
 
 
 ## Installation

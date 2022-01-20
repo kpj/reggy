@@ -50,10 +50,16 @@ def test_gaussian_example(seed_rng):
 
 def test_regularization(seed_rng):
     alpha = 0.3
-    beta = 1.7
+    beta = np.array([[1.7, -0.2, 5.5, -1.3]]).T
 
-    X = np.random.normal(size=(1000, 1))
-    y = np.random.normal(X * beta + alpha, size=(1000, 1))
+    X = np.random.normal(size=(1000, 4))
+    y = np.random.normal(X @ beta + alpha, size=(1000, 1))
+    similarity_graph = np.random.random((4, 4))
 
-    model = reggy.RegReg(X, y, family=reggy.gaussian_family, regularizers=[reggy.lasso])
+    model = reggy.RegReg(
+        X,
+        y,
+        family=reggy.gaussian_family,
+        regularizers=[reggy.lasso, reggy.network_fusion_x(similarity_graph)],
+    )
     fit = model.fit()

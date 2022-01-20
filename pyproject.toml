@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "reggy"
 version = "0.1.0"
-description = "Regressions with arbitrarily complex regularization terms."
+description = "Python package for regularized regressions."
 license = "MIT"
 authors = ["kpj <kim.philipp.jablonski@gmail.com>"]
 readme = "README.md"
