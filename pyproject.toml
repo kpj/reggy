@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "reggy"
-version = "0.1.0"
+version = "0.2.0"
 description = "Python package for regularized regressions."
 license = "MIT"
 authors = ["kpj <kim.philipp.jablonski@gmail.com>"]
