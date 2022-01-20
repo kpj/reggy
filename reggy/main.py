@@ -4,7 +4,6 @@ from .model import Model
 from .families import gaussian_family
 
 
-# TODO: model sklearn interface more closely
 class RegReg:
     def __init__(self, x, y, family=gaussian_family, regularizers=None):
         self.x = x
@@ -26,8 +25,13 @@ class RegReg:
         )
         return self.model.fit(self.x, self.y, epochs=epochs, callbacks=[es])
 
-    def coef(self):
-        return self.model.alpha.numpy(), self.model.beta.numpy()
-
     def _loss_wrapper(self, y_true, y_pred, loss_func):
         return loss_func(y_true, y_pred)
+
+    @property
+    def intercept_(self):
+        return self.model.alpha.numpy()
+
+    @property
+    def coef_(self):
+        return self.model.beta.numpy()

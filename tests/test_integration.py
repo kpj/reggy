@@ -25,8 +25,8 @@ def test_simple_case(seed_rng):
     model = reggy.RegReg(X, y)
     fit = model.fit()
 
-    np.testing.assert_allclose(model.model.alpha, alpha, rtol=1e-1)
-    np.testing.assert_allclose(model.model.beta, beta, rtol=1e-1)
+    np.testing.assert_allclose(model.intercept_, alpha, rtol=1e-1)
+    np.testing.assert_allclose(model.coef_, beta, rtol=1e-1)
 
 
 def test_gaussian_example(seed_rng):
@@ -44,8 +44,8 @@ def test_gaussian_example(seed_rng):
     fit = model.fit()
 
     # check results
-    np.testing.assert_allclose(model.model.alpha, alpha_true, rtol=1e-1)
-    np.testing.assert_allclose(model.model.beta, beta_true, rtol=1e-1)
+    np.testing.assert_allclose(model.intercept_, alpha_true, rtol=1e-1)
+    np.testing.assert_allclose(model.coef_, beta_true, rtol=1e-1)
 
 
 def test_regularization(seed_rng):
