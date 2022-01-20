@@ -15,7 +15,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8.0'
+          python-version: '3.9.0'
 
       - name: Install Poetry
         uses: snok/install-poetry@v1
@@ -42,7 +42,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8.0'
+          python-version: '3.9.0'
 
       - name: Install Poetry
         uses: snok/install-poetry@v1
