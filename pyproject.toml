@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "regreg"
+name = "pyreg"
 version = "0.1.0"
 description = "Regressions with arbitrarily complex regularization terms."
 license = "MIT"
 authors = ["kpj <kim.philipp.jablonski@gmail.com>"]
 readme = "README.md"
-repository = "https://github.com/kpj/regreg"
+repository = "https://github.com/kpj/pyreg"
 
 [tool.poetry.dependencies]
 python = "3.9.0"
