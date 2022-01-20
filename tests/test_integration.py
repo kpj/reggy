@@ -43,5 +43,5 @@ def test_regularization():
     X = np.random.normal(size=(1000, 1))
     y = np.random.normal(X * beta + alpha, size=(1000, 1))
 
-    model = reggy.RegReg(X, y, regularizers=[reggy.lasso])
+    model = reggy.RegReg(X, y, family=reggy.gaussian_family, regularizers=[reggy.lasso])
     fit = model.fit()
