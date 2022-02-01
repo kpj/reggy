@@ -13,7 +13,7 @@ gaussian_family = {
 }
 
 
-def binomial_loss(y_true, y_pred):
+def bernoulli_loss(y_true, y_pred):
     obj = 0
     for j in range(y_true.shape[1]):
         prob = tfp.distributions.Bernoulli(probs=y_pred[:, j], validate_args=True)
@@ -21,8 +21,8 @@ def binomial_loss(y_true, y_pred):
     return -obj
 
 
-binomial_family = {
+bernoulli_family = {
     "link": lambda p: tf.math.log(p / (1 - p)),  # logit
     "linkinv": lambda x: 1 / (1 + tf.exp(-x)),  # logistic
-    "loss": binomial_loss,
+    "loss": bernoulli_loss,
 }
